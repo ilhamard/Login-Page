@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- iconscout -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Register</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms">
+        <div class="form login">
+          <span class="title">Create Your Account</span>
+
+          <form action="#">
+            <div class="input-field">
+                <span class="titleemail">First name</span><br />
+                <input id ="firstName" type="text" placeholder="Masukan Nama Depan" required />
+                <!-- <i class="uil uil-envelope"></i> -->
+              </div>
+              <div class="input-field">
+                <span class="titleemail">Last Name</span><br />
+                <input id ="lastName" type="text" placeholder="Masukan Nama Belakang" required />
+                <!-- <i class="uil uil-envelope"></i> -->
+              </div>
+            <div class="input-field">
+              <span class="titleemail">Email Address</span><br />
+              <input id ="email" type="email" placeholder="Masukan Email" required />
+              <!-- <i class="uil uil-envelope"></i> -->
+            </div>
+            <div class="input-field">
+              <span class="titllepw">Password</span><br />
+              <input  id="password" type="password" placeholder="Masukan Password" minlength="8" required />
+              <!-- <p id = "length" class = "invalid"> Minimal <b> 8 karakter </b> </p> -->
+              <!-- <i class="uil uil-padlock"></i> -->
+              </div>
+              <div class="cekbox">
+                  <input type="checkbox" name="checkbox" id="cekbox">
+                  <span>To Register With Us please click to agree to our</span>
+                  <a href="#">Terms and Conditions</a>
+              </div>
+              <div class="button">
+                  <button type="button" onclick="saveData()">Register</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="sudah">
+        <span class="text">Already have an account?
+            <a href="login.html" class="text-regis">Sign in</a>
+        </span>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function saveData(){
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            // var length = document.getElementById("length");
+
+            if(firstName == ""){
+                alert("isi nama depan")
+            }else if(lastName == ""){
+                alert("isi nama belakang")
+            }else if(email == ""){
+                alert("isi email")
+            }else if(password.length < 8){
+                alert("password harus lebih dari 8 character")
+            }
+            const kosong = [];
+            kosong.push(firstName);
+            kosong.push(lastName);
+            kosong.push(email);
+            kosong.push(password);
+            console.log(kosong)
+        }
+
+        let user = {
+            firstName : "ilham",
+            lastName : "ardiansyah",
+            email : "ilhamard1552@gmail.com",
+            password : "12345678"
+    
+    }
+    </script>
+  </body>
+</html>
